@@ -1,61 +1,117 @@
-
-import { View, Text } from "react-native";
+import React, { useEffect, useRef } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Animated,
+  Easing,
+} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-export default function HomeScreen() {
+export default function App() {
+  // Animation values
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const scaleAnim = useRef(new Animated.Value(0.7)).current;
+  const floatAnim = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    // Text fade + zoom animation
+    Animated.parallel([
+      Animated.timing(fadeAnim, {
+        toValue: 1,
+        duration: 2000,
+        useNativeDriver: true,
+      }),
+      Animated.spring(scaleAnim, {
+        toValue: 1,
+        friction: 4,
+        useNativeDriver: true,
+      }),
+    ]).start();
+
+    // Continuous floating animation
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(floatAnim, {
+          toValue: -10,
+          duration: 1500,
+          easing: Easing.inOut(Easing.ease),
+          useNativeDriver: true,
+        }),
+        Animated.timing(floatAnim, {
+          toValue: 10,
+          duration: 1500,
+          easing: Easing.inOut(Easing.ease),
+          useNativeDriver: true,
+        }),
+      ])
+    ).start();
+  }, []);
+
   return (
-
     <LinearGradient
-      colors={["#ffffff", "#ff5e62"]}
-      start={{ x: 1, y: 1 }}
-      end={{ x: 0, y: 0 }}
-      style={{
-        flex: 1,
-      }}
+      colors={["#b492be", "#243B55", "#0F2027"]}
+      style={styles.container}
     >
-      <View style={{
-        width: 30,
-        minWidth: 270,
-        maxWidth: 350,
-        height: 600,
-        minHeight: 280,
-        maxHeight: 800,
-        backgroundColor: "blue",
-        opacity: 1,
-        borderColor: "grey",
-        borderWidth: 5,
-        borderRadius: 8,
-        borderTopWidth: 30,
-        borderBottomWidth: 30,
-        borderLeftWidth: 8,
-        borderRightWidth: 8,
-        padding: 20,
-        margin: 60,
-        flex: 1,
-        flexDirection: "row",
-        justifyContent: "center",
-        alignContent: "center",
-        alignSelf: "center",
-        alignItems: "center",
-        flexWrap: "wrap",
-        // position: "relative",
-        top: 50,
-        bottom: 50,
-        left: 20,
-        right: 20,
-        elevation: 40,
-        shadowColor: "green",
-        shadowOpacity: 0.5,
-        shadowRadius: 100,
-        overflow: "scroll",
-        transform: [{ rotate: "1deg" }, { translateX: 1 }],
+      {/* Background Car Graphics */}
+      <MaterialCommunityIcons
+        name="car-sports"
+        size={180}
+        color="rgba(170, 170, 170, 0.08)"
+        style={[styles.car, { top: 80, left: 20, transform: [{ rotate: "-15deg" }] }]}
+      />
 
-      }}>
-        {/* <text >
-          hello
-        </text> */}
-      </View>
-      </LinearGradient>
-    // </View>
+      <MaterialCommunityIcons
+        name="car-convertible"
+        size={150}
+        color="rgba(255,255,255,0.06)"
+        style={[styles.car, { bottom: 120, right: 10, transform: [{ rotate: "12deg" }] }]}
+      />
+
+      <MaterialCommunityIcons
+        name="car-estate"
+        size={120}
+        color="rgba(255,255,255,0.05)"
+        style={[styles.car, { bottom: 40, left: 30, transform: [{ rotate: "-8deg" }] }]}
+      />
+
+      {/* Animated Text */}
+      <Animated.Text
+        style={[
+          styles.text,
+          {
+            opacity: fadeAnim,
+            transform: [
+              { scale: scaleAnim },
+              { translateY: floatAnim },
+            ],
+          },
+        ]}
+      >
+        hahaha you fool
+      </Animated.Text>
+    </LinearGradient>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: {
+    fontSize: 30,
+    fontWeight: "bold",
+    color: "#ffffff",
+    textAlign: "center",
+    paddingHorizontal: 24,
+    textShadowColor: "rgba(0,0,0,0.4)",
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 8,
+  },
+  car: {
+    position: "absolute",
+  },
+});
