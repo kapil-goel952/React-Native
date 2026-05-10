@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Pressable, View, ScrollView, Text, Image, ImageBackground, Button, Dimensions, Modal } from "react-native";
+import { Pressable, View, ScrollView, Text, Image, ImageBackground, Button,StatusBar,ActivityIndicator, Dimensions, Modal } from "react-native";
 
 // const { width, height } = Dimensions.get("window");
 
 export default function HomeScreen() {
-  const [move, Setmove] = useState(false)
+  const [move, Seta] = useState(false)
   return (
     <ImageBackground
       source={{
@@ -24,6 +24,8 @@ export default function HomeScreen() {
       <View style={{
         flex: 1,
       }}>
+      <StatusBar barStyle={"dark-content"}  backgroundColor={"red"}/>
+
         <ScrollView
           style={{
             flex: 1,
@@ -181,26 +183,25 @@ export default function HomeScreen() {
             <Text>Go to new window</Text>
             <Button
               title="book now"
-              onPress={() => Setmove(true)} />
-
-            <Modal visible={move} animationType="slide">
-
+            color={"black"}
+          onPress={() => Seta(true)} />
+          <ActivityIndicator   size={"large"}   color={'red'}/>
+            <Modal 
+            visible={move}
+            animationType="fade">
               <View style={{
                 flex: 1,
                 justifyContent: "center",
                 alignItems: "center",
-                
+                backgroundColor:"grey"
               }}>
-
                 <Text>Hello Modal</Text>
-
                 <Button
                   title="close"
-                  onPress={() => Setmove(false)}
+                  color={"black"}
+                  onPress={() => Seta(false)}
                 />
-
               </View>
-
             </Modal>
           </View>
         </ScrollView>
