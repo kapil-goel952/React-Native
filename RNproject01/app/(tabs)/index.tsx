@@ -1,8 +1,10 @@
-import { Pressable, View, ScrollView, Text, Image, ImageBackground, Button, Dimensions } from "react-native";
+import { useState } from "react";
+import { Pressable, View, ScrollView, Text, Image, ImageBackground, Button, Dimensions, Modal } from "react-native";
 
-const { width, height } = Dimensions.get("window");
+// const { width, height } = Dimensions.get("window");
 
 export default function HomeScreen() {
+  const [move, Setmove] = useState(false)
   return (
     <ImageBackground
       source={{
@@ -20,7 +22,7 @@ export default function HomeScreen() {
       }}
     >
       <View style={{
-        flex:1,
+        flex: 1,
       }}>
         <ScrollView
           style={{
@@ -30,7 +32,7 @@ export default function HomeScreen() {
             paddingBottom: 20,
             paddingRight: 20,
             paddingLeft: 20,
-          
+
             // justifyContent: "center",
             // alignItems: "center",
             // transform: [{ rotate: "-90deg" }],
@@ -151,6 +153,56 @@ export default function HomeScreen() {
             <Button title="click me" onPress={() => { console.log("buton chal gyaaa") }} />
           </View>
 
+
+          <View style={{
+            margin: 20,
+            padding: 20
+          }}>
+            <Button title="click me" onPress={() => { console.log("buton chal gyaaa") }} />
+          </View>
+
+          <View style={{
+            margin: 20,
+            padding: 20
+          }}>
+            <Button title="click me" onPress={() => { console.log("buton chal gyaaa") }} />
+          </View>
+
+          <View style={{
+            margin: 20,
+            padding: 20
+          }}>
+            <Button title="click me" onPress={() => { console.log("buton chal gyaaa") }} />
+          </View>
+          <View style={{
+            margin: 20,
+            padding: 20
+          }}>
+            <Text>Go to new window</Text>
+            <Button
+              title="book now"
+              onPress={() => Setmove(true)} />
+
+            <Modal visible={move} animationType="slide">
+
+              <View style={{
+                flex: 1,
+                justifyContent: "center",
+                alignItems: "center",
+                
+              }}>
+
+                <Text>Hello Modal</Text>
+
+                <Button
+                  title="close"
+                  onPress={() => Setmove(false)}
+                />
+
+              </View>
+
+            </Modal>
+          </View>
         </ScrollView>
       </View>
     </ImageBackground>
