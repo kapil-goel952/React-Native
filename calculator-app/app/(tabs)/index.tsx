@@ -89,7 +89,7 @@ export default function App() {
           },
         ]}
       >
-        hahaha you fool
+       Ritik bhai tu apani jaaan hai
       </Animated.Text>
     </LinearGradient>
   );
