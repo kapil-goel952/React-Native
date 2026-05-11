@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Pressable, View, ScrollView, Text, Image, ImageBackground, Button,StatusBar,ActivityIndicator, Dimensions, Modal } from "react-native";
+import { Pressable, Alert,View, ScrollView, Text, Image, ImageBackground, Button,StatusBar,ActivityIndicator, Dimensions, Modal } from "react-native";
 
 // const { width, height } = Dimensions.get("window");
 
@@ -56,10 +56,10 @@ export default function HomeScreen() {
             }}></Image>
             <Button
               title="click me"
-              onPress={() => {
-                console.log("buton chal gyaaa")
+              onPress={() => 
+                Alert.alert("invalid input")
 
-              }} />
+              } />
 
           </View>
           <Text
@@ -147,12 +147,44 @@ export default function HomeScreen() {
           >
             sooooojaa Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque delectus numquam qui, amet quos architecto provident perspiciatis nam molestias voluptatum harum veritatis odit omnis impedit exercitationem expedita velit nihil hic.
           </Text>
-          <View><Image source={{ uri: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?q=80&w=1515&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }}
-            style={{
-              height: 100, width: 150, margin: 20
+
+          
+          <View>
+            <Image
+               source={{ uri: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?q=80&w=1515&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }}
+              style={{
+                height: 100, 
+                width: 150, 
+                margin: 20
               // position:"absolute"
-            }}></Image>
-            <Button title="click me" onPress={() => { console.log("buton chal gyaaa") }} />
+            }}>
+
+            </Image>
+            {/* <Button title="click me" onPress={() => { console.log("buton chal gyaaa") }} /> */}
+          </View>
+
+          <View>
+            <Button
+              title="alert me"
+              onPress={() => {
+                Alert.alert(
+                  "galat mt bol samjhana",
+                  "ab ek option choose kro",
+                  [
+                    {
+                      text: "sach boluga",
+                      onPress: () =>
+                        console.log("bada samajhdaar insaan hai"),
+                    },
+                    {
+                      text: "sach nahi boluga",
+                      onPress: () =>
+                        console.log("bada jiddi insaan hai"),
+                    },
+                  ]
+                );
+              }}
+            />
           </View>
 
 
@@ -160,14 +192,31 @@ export default function HomeScreen() {
             margin: 20,
             padding: 20
           }}>
-            <Button title="click me" onPress={() => { console.log("buton chal gyaaa") }} />
+            {/* <Button title="click me" onPress={() => { console.log("buton chal gyaaa") }} /> */}
           </View>
 
           <View style={{
             margin: 20,
             padding: 20
           }}>
-            <Button title="click me" onPress={() => { console.log("buton chal gyaaa") }} />
+            {/* <Button title="click me" onPress={() => { console.log("buton chal gyaaa") }} /> */}
+          </View>
+
+          <View>
+            <Button
+              title="Ouestion btaao"
+              onPress={()=>{
+                Alert.alert("tera result kaisa aaya","kitano me paas hai",[
+                  {
+                    text:"accha nahi aaya",
+                    onPress:()=>console.log("koi baat ni acche se padhai kr")
+                  }
+                  ,{
+                    text:"accha aaya hai",
+                    onPress:()=>console.log("aur mehnat kr aur skill sikho")
+                  }
+                ])
+              }}/>
           </View>
 
           <View style={{
