@@ -186,7 +186,7 @@ export default function HomeScreen() {
             color={"black"}
           onPress={() => Seta(true)} />
           <ActivityIndicator   size={"large"}   color={'red'}/>
-            {/* <Modal 
+            <Modal 
             visible={move}
             animationType="fade">
               <View style={{
@@ -202,7 +202,7 @@ export default function HomeScreen() {
                   onPress={() => Seta(false)}
                 />
               </View>
-            </Modal> */}
+            </Modal>
           </View>
         </ScrollView>
       </View>
