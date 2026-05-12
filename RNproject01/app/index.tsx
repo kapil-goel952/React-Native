@@ -1,54 +1,39 @@
-import { useState } from "react";
-import { Pressable, Alert, View, ScrollView, Text, Image, ImageBackground, Button, StatusBar, ActivityIndicator, StyleSheet, Dimensions, Modal } from "react-native";
-import Welcome from "../Components/Cards"
-import Home from "../Components/Home"
-import Header from "../Components/header"
+import { View, Text ,ActivityIndicator} from "react-native";
+import { useEffect } from "react";
+import { router } from "expo-router";
 
+export default function Index() {
 
+  useEffect(() => {
 
-export default function HomeScreen() {
-  const [move, Seta] = useState(false)
+    setTimeout(() => {
+      router.replace("/Home");
+    }, 3000);
+
+    }, []);
+
   return (
-    <ImageBackground
-      source={{
-        uri: "https://images.unsplash.com/photo-1668394559082-ec8de901fe86?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmFja2dyb3VuZCUyMGltYWdlfGVufDB8fDB8fHww",
-      }}
+    <View
       style={{
         flex: 1,
+        backgroundColor: "rgb(109,31,27)",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      <View style={{
-        flex: 1,
-      }}>
-        <StatusBar barStyle={"dark-content"} backgroundColor={"red"} />
-
-        <ScrollView
-          style={design.ScrollView}
-        >
-          <Header/>
-          <Home/>
-        </ScrollView>
-      </View>
-    </ImageBackground>
+      <Text
+        style={{
+          color: "white",
+          fontSize: 30,
+        }}
+      >
+        MY APP
+      </Text>
+      <ActivityIndicator size="large" color="white" />
+    </View>
   );
 }
 
-const design =StyleSheet.create(
- { 
-  modal: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "grey"
-  },
-  ScrollView: {
-    flex: 1,
-    marginTop: 10,
-    paddingTop: 30,
-    paddingBottom: 20,
-   
-  }
-})
 
 
 
