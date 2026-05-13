@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet,ScrollView } from 'react-native'
 import Recommended from './recomend'
 
 export default function reco0mmended_Jobs() {
@@ -10,7 +10,7 @@ export default function reco0mmended_Jobs() {
             role: "UI/UX Designer",
             company: "Google",
             companyLogo: {
-                uri: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                uri: "https://img.icons8.com/?size=100&id=V5cGWnc9R4xj&format=png&color=000000"
             },
             flexibility: "Work From Home",
         },
@@ -21,7 +21,7 @@ export default function reco0mmended_Jobs() {
             role: "Frontend Developer",
             company: "Microsoft",
             companyLogo: {
-                uri: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                uri: "https://img.icons8.com/?size=100&id=22989&format=png&color=000000"
             },
             flexibility: "Full Time",
         },
@@ -33,7 +33,7 @@ export default function reco0mmended_Jobs() {
             company: "Amazon",
 
             companyLogo: {
-                uri: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+                uri: "https://img.icons8.com/?size=100&id=31ntOI4KZ6HK&format=png&color=000000"
             },
             flexibility: "Hybrid",
         },
@@ -44,7 +44,7 @@ export default function reco0mmended_Jobs() {
             role: "React Native Developer",
             company: "Meta",
             companyLogo: {
-                uri: "https://upload.wikimedia.org/wikipedia/commons/0/05/Meta_Platforms_Inc._logo.svg"
+                uri: "https://cdn.pixabay.com/photo/2021/12/14/22/29/meta-6871457_960_720.png"
             },
             flexibility: "Part Time",
         },
@@ -55,7 +55,7 @@ export default function reco0mmended_Jobs() {
             role: "Graphic Designer",
             company: "Adobe",
             companyLogo: {
-                uri: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Adobe_Corporate_logo.svg"
+                uri: "https://cdn-icons-png.flaticon.com/128/888/888835.png"
             },
             flexibility: "Remote",
         },
@@ -66,7 +66,7 @@ export default function reco0mmended_Jobs() {
             role: "Full Stack Developer",
             company: "Netflix",
             companyLogo: {
-                uri: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+                uri: "https://img.icons8.com/?size=100&id=YxcpxvqEHp7W&format=png&color=000000"
             },
             flexibility: "Internship",
         },
@@ -81,18 +81,23 @@ export default function reco0mmended_Jobs() {
                     Recommended Jobs
                 </Text>
             </View>
-            <View>
+            <ScrollView>
                 {
-                    // jobs.map((item) => {
-                    //     return (
+                    jobs.map((item) => {
 
-                    //         <Recommended props:item  />
+                        return (
 
-                    //     )
-                    // })
+                            <View key={item.id}>
+                                
+                                <Recommended image={item.companyLogo} role={item.role} company={item.company} flexibility={item.flexibility} />
+                            </View>
+                            
+                        )
+
+                    })
                 }
-
-            </View>
+                
+            </ScrollView>
         </View>
     )
 }
@@ -101,12 +106,16 @@ const styles = StyleSheet.create(
     {
         main: {
             width: "100%",
-            height: 300,
-            backgroundColor: "green"
+            height: 360,
+            backgroundColor: "rgb(255, 255, 255)",
+            position:"absolute",
+            top:500,
+
         },
         mainText: {
             fontSize: 25,
             fontWeight: 800,
+            marginBottom:10
 
         }
     }
