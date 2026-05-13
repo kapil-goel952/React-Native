@@ -1,33 +1,44 @@
 import { useState } from 'react'
 import { Pressable, Alert, View, ScrollView, Text, Image, ImageBackground, Button, StatusBar, ActivityIndicator, StyleSheet, Dimensions, Modal } from "react-native";
-import Header from '../Components/header'
+import Footer from '../Components/Footer'
+import Body from '../Components/body'
+import Recomended from '../Components/Recomended_Jobs'
+
 export default function home() {
     const [isShow, setisShow] = useState(false);
     return (
-        <ImageBackground
-            source={{
-                uri: "https://images.unsplash.com/photo-1668394559082-ec8de901fe86?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmFja2dyb3VuZCUyMGltYWdlfGVufDB8fDB8fHww",
-            }}
-            style={{
-                flex: 1,
-        }}>
-            <View style={{
-                flex: 1,
-            }}>
+        <View
+            style={design.main}>
+            <View
+                style={{
+                    flex: 1,
+                }}>
                 <StatusBar barStyle={"dark-content"} backgroundColor={"red"} />
+                <View
+                    style={
+                        design.body
+                    }>
+                   <Recomended/>
+                </View>
+                <View
+                    style={
+                        design.Footer
+                    }>
+                    <Footer />
+                </View>
 
-                <ScrollView
-                    style={design.ScrollView}
-                >
-                    <Header/>
-                </ScrollView>
             </View>
-        </ImageBackground>
-
+        </View>
     )
 }
 const design = StyleSheet.create(
     {
+        main:
+        {
+            backgroundColor: "#fefefe",
+            height: "100%",
+            width: "100%",
+        },
         modal: {
             flex: 1,
             justifyContent: "center",
@@ -37,7 +48,15 @@ const design = StyleSheet.create(
         ScrollView: {
             flex: 1,
             marginTop: 33,
-            paddingBottom: 20,
 
+
+        },
+        Footer: {
+            position: "absolute",
+            width: "100%",
+            bottom:0
+        },
+        body: {
+            margin: 10
         }
     })
