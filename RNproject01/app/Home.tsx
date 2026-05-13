@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Pressable, Alert, View, ScrollView, Text, Image, ImageBackground, Button, StatusBar, ActivityIndicator, StyleSheet, Dimensions, Modal } from "react-native";
 import Footer from '../Components/Footer'
-import Body from '../Components/body'
-import Recomended_Jobs from '../Components/Recomended_Jobs'
+import Body from '../core components/body'
+import Recomended_Jobs from '../Components/Recommended/Recomended_Jobs'
 
 export default function home() {
     const [isShow, setisShow] = useState(false);

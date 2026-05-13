@@ -14,6 +14,7 @@ export default function Profile() {
 }
 
 const styles = StyleSheet.create({
+    
     Footer: {
         position: "absolute",
         width: "100%",

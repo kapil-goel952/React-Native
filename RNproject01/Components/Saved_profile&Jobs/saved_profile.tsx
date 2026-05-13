@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Image, Button, Pressable } from "react-native";
 
 
 
-export default function Recommended(props: any) {
+export default function saved_profile(props: any) {
 
     return (
         <View style={styles.main}>
@@ -13,38 +13,36 @@ export default function Recommended(props: any) {
                 />
             </View>
 
-            <View
-            style={styles.text}>
+            <View>
                 <Text
-                style={styles.role}
-                    >
+                    style={styles.role}
+                >
                     {props.role}
                 </Text>
                 <Text
-                style={styles.company}>
+                    style={styles.company}>
                     {props.company}
                 </Text>
                 <Text
-                style={styles.flexibility}>
+                    style={styles.flexibility}>
                     {props.flexibility}
                 </Text>
 
 
             </View>
             <View
-                >
+            >
                 <Pressable
-                     style={styles.Pressable}
+                    style={styles.Pressable}
                 >
-                    <Text
-                    style={styles.pressText}
-                       >
-                        Apply
-                    </Text>
+                    <Image
+                        source={{ uri: "https://img.icons8.com/?size=100&id=59740&format=png&color=7950F2" }}
+                        style={styles.logo}
+                    />
                 </Pressable>
             </View>
         </View>
-    
+
     );
 }
 
@@ -57,42 +55,35 @@ const styles = StyleSheet.create({
         gap: 15,
         alignItems: "center",
         marginVertical: 10,
-        borderRadius:8,
-        borderColor:"rgb(221, 207, 207)",
-        justifyContent:"space-between"
+        borderRadius: 8,
+        borderColor: "rgb(221, 207, 207)",
+        justifyContent: "space-between"
     },
     Image: {
         height: 30,
         width: 30,
         borderRadius: 5,
     },
-    text:{
-       
-
+    role: {
+        fontSize: 20,
+        fontWeight: 700,
     },
-    role:{
-        fontSize:20,
-        fontWeight:700,
+    company: {
+        fontSize: 15,
+        fontWeight: 700,
     },
-    company:{
-        fontSize:15,
-        fontWeight:700, 
+    flexibility: {
+        fontSize: 13,
+        color: "rgb(95, 90, 90)"
     },
-    flexibility:{
-        fontSize:13,
-        color:"rgb(95, 90, 90)"
+    Pressable: {
+        margin: 20,
+        textAlign: 'right'
     },
-    Pressable:{
-        margin:20,
-        textAlign:'right'
+    logo: {
+        height: 25,
+        width: 25,
+        borderRadius: 50,
+        marginLeft: 10
     },
-    pressText:{
-        color:"white",
-        backgroundColor:"rgb(72, 5, 228)",
-        paddingLeft:9,
-        paddingRight:9,
-        paddingTop:4,
-        paddingBottom:4,
-        borderRadius:7
-    }
 });

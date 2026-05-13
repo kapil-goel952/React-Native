@@ -7,7 +7,7 @@ export default function header() {
         <View style={styles.main}>
             <View>
                 <Image
-                    source={{ uri: "https://plus.unsplash.com/premium_photo-1661914978519-52a11fe159a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bG9nb3xlbnwwfHwwfHx8MA%3D%3D" }}
+                    source={{ uri: "https://img.icons8.com/?size=100&id=1iF9PyJ2Thzo&format=png&color=7950F2" }}
                     style={styles.logo}
                 />
                 <View
@@ -27,10 +27,6 @@ export default function header() {
                 </View>
             </View>
             <View>
-                <Image
-                    source={{ uri: "https://plus.unsplash.com/premium_photo-1661914978519-52a11fe159a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bG9nb3xlbnwwfHwwfHx8MA%3D%3D" }}
-                    style={styles.logo}
-                />
                 <View
                     style={styles.buttons}>
                     <Pressable
@@ -41,6 +37,10 @@ export default function header() {
                         }}
                         style={styles.Pressable}
                     >
+                        <Image
+                            source={{ uri: "https://img.icons8.com/?size=100&id=102261&format=png&color=7950F2" }}
+                            style={styles.logo}
+                        />
                         <Text>
                             People
                         </Text>
@@ -49,7 +49,7 @@ export default function header() {
             </View>
             <View>
                 <Image
-                    source={{ uri: "https://plus.unsplash.com/premium_photo-1661914978519-52a11fe159a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bG9nb3xlbnwwfHwwfHx8MA%3D%3D" }}
+                    source={{ uri: "https://img.icons8.com/?size=100&id=59740&format=png&color=7950F2" }}
                     style={styles.logo}
                 />
                 <View
@@ -70,7 +70,7 @@ export default function header() {
             </View>
             <View>
                 <Image
-                    source={{ uri: "https://plus.unsplash.com/premium_photo-1661914978519-52a11fe159a7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bG9nb3xlbnwwfHwwfHx8MA%3D%3D" }}
+                    source={{ uri: "https://img.icons8.com/?size=100&id=60023&format=png&color=7950F2" }}
                     style={styles.logo}
                 />
                 <View
@@ -89,8 +89,8 @@ export default function header() {
                     </Pressable>
                 </View>
             </View>
-           
-            
+
+
         </View>
     )
 }
@@ -103,8 +103,8 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         padding: 10,
-        borderTopWidth:1,
-        borderBlockColor:"rgb(221, 207, 207)"
+        borderTopWidth: 1,
+        borderBlockColor: "rgb(221, 207, 207)"
     },
     logo: {
         height: 25,
