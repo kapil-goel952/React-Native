@@ -1,5 +1,4 @@
 import { View, StyleSheet } from 'react-native'
-import Footer from '../Components/Footer'
 
 export default function Profile() {
     return (
@@ -7,7 +6,7 @@ export default function Profile() {
             style={
                 styles.Footer
             }>
-            <Footer />
+          
         </View>
 
     )

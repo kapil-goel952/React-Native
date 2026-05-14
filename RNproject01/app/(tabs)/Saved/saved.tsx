@@ -1,6 +1,6 @@
 import { View, StyleSheet, ScrollView } from 'react-native'
-import Footer from '../Components/Footer'
-import Saved_profile from '@/Components/Saved_profile&Jobs/saved_profile'
+
+import Saved_profile from '@/components/Saved_profile&Jobs/saved_profile'
 
 export default function Profile() {
     const jobs = [
@@ -95,7 +95,7 @@ export default function Profile() {
                 style={
                     styles.Footer
                 }>
-                <Footer />
+           
             </View>
         </View>
 
