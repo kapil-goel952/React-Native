@@ -6,10 +6,10 @@ export default function header() {
     return (
         <View style={styles.main}>
             <View>
-                {/* <Image
+                <Image
                     source={{ uri: "https://img.icons8.com/?size=100&id=1iF9PyJ2Thzo&format=png&color=7950F2" }}
                     style={styles.logo}
-                /> */}
+                />
                 <View
                     style={styles.buttons}>
                     <Pressable

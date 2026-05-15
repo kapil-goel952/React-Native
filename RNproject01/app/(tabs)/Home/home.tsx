@@ -1,5 +1,5 @@
 import {
-  
+  View,
   ScrollView,
   StyleSheet,
 } from "react-native";
@@ -34,8 +34,10 @@ export default function Home() {
         {/* Recommended Jobs */}
         <RecommendedJobs />
 
-    {/* <Footer/> */}
       </ScrollView>
+      <View>
+    <Footer/>
+    </View>
 
     </SafeAreaView>
 
@@ -53,5 +55,8 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     paddingBottom: 120,
   },
-
+  footer:{
+    position:"absolute",
+    bottom:0,
+  }
 });
