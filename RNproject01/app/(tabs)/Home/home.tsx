@@ -9,6 +9,7 @@ import Header from "./Components/homeheader";
 import HomeHero from "./Components/homehero";
 import HomeSearch from "./Components/homesearch";
 import RecommendedJobs from "./Components/recommended_jobs";
+import Footer from '../../../components/Footer'
 
 export default function Home() {
 
@@ -16,10 +17,6 @@ export default function Home() {
 
     <SafeAreaView style={styles.container}>
 
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.scrollContainer}
-      >
 
         {/* Header */}
         <Header />
@@ -29,10 +26,15 @@ export default function Home() {
 
         {/* Search Section */}
         <HomeSearch />
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollContainer}
+      >
 
         {/* Recommended Jobs */}
         <RecommendedJobs />
 
+    <Footer/>
       </ScrollView>
 
     </SafeAreaView>
