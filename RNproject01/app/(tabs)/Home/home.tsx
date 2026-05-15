@@ -34,7 +34,7 @@ export default function Home() {
         {/* Recommended Jobs */}
         <RecommendedJobs />
 
-    <Footer/>
+    {/* <Footer/> */}
       </ScrollView>
 
     </SafeAreaView>
