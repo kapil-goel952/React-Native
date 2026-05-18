@@ -18,3 +18,26 @@ The projects focus on:
 - Mobile app development concepts
 
 ---
+
+## 🛠️ Tech Stack
+
+- React Native
+- JavaScript
+- React
+- JSX
+- CSS / Styling
+- Expo / React Native CLI
+
+---
+
+## 📂 Project Structure
+
+```bash
+React-Native/
+│
+├── components/
+├── screens/
+├── assets/
+├── App.js
+├── package.json
+└── README.md
